@@ -23,7 +23,7 @@ public class DemoController
     @RequestMapping("/metrics")
     public Object GetPrometheusMetrics()
     {
-        System.out.println("metrics has been called!")
+        System.out.println("metrics has been called!");
         Object response = prometheusRegistry.scrape();
         System.out.println("RESPONSE: " + response);
         return response;
