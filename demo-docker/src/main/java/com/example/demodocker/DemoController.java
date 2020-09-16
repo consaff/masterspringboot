@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController
 {
+    
+    PrometheusMeterRegistry prometheusRegistry = new PrometheusMeterRegistry(PrometheusConfig.DEFAULT);
     @RequestMapping("/")
     public List<Customer> findAll()
     {
@@ -16,5 +18,14 @@ public class DemoController
         customerList.add(new Customer(1, "frank"));
         customerList.add(new Customer(2, "john"));
         return customerList;
+    }
+    
+    @RequestMapping("/metrics")
+    public Object GetPrometheusMetrics()
+    {
+        System.out.println("metrics has been called!")
+        Object response = prometheusRegistry.scrape();
+        System.out.println("RESPONSE: " + response);
+        return response;
     }
 }
