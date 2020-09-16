@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import io.micrometer.prometheus.PrometheusMeterRegistry;
-import io.micrometer.prometheus.PrometheusConfig;
+//import io.micrometer.prometheus.PrometheusMeterRegistry;
+//import io.micrometer.prometheus.PrometheusConfig;
 
 
 @RestController
 public class DemoController
 {
     
-    PrometheusMeterRegistry prometheusRegistry = new PrometheusMeterRegistry(PrometheusConfig.DEFAULT);
+    //PrometheusMeterRegistry prometheusRegistry = new PrometheusMeterRegistry(PrometheusConfig.DEFAULT);
     @RequestMapping("/")
     public List<Customer> findAll()
     {
@@ -22,7 +22,7 @@ public class DemoController
         return customerList;
     }
     
-    @RequestMapping("/metrics")
+    /*
     public Object GetPrometheusMetrics()
     {
         System.out.println("metrics has been called!");
@@ -30,4 +30,5 @@ public class DemoController
         System.out.println("RESPONSE: " + response);
         return response;
     }
+    */
 }
