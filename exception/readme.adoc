@@ -1,3 +1,0 @@
-== Spring Boot Exception Handling Demo
-
-Source code for tutorial: http://www.masterspringboot.com/develop-applications/rest-services/exception-handling-in-spring-boot-applications

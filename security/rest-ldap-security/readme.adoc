@@ -1,3 +1,0 @@
-== Spring Boot LDAP security
-
-Source code for this tutorial: http://www.masterspringboot.com/security/authentication/securing-spring-boot-applications-with-ldap

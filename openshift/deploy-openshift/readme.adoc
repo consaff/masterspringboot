@@ -1,3 +1,0 @@
-== Example SpringBoot 2 application that can be deployed on OpenShift
-
-Tutorial: http://www.masterspringboot.com/openshift/how-to-deploy-spring-boot-applications-on-openshift-using-openshift-maven-plugin

@@ -1,3 +1,0 @@
-== Spring Boot with PostgreSQL demo
-
-Tutorial for: http://www.masterspringboot.com/data-access/jpa/how-to-create-a-spring-boot-crud-jpa-application-with-postgresql
