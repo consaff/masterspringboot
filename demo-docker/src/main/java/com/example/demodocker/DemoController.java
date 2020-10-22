@@ -12,6 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController
 {
     
+    @RequestMapping("/metrics")
+    public string test()
+    {
+        string ret = "# HELP test metric" 
+            + "\n# TYPE test gauge"
+            + "\ntest 10.0";
+        
+        return ret;       
+    }
+    
     //PrometheusMeterRegistry prometheusRegistry = new PrometheusMeterRegistry(PrometheusConfig.DEFAULT);
     @RequestMapping("/")
     public List<Customer> findAll()
