@@ -13,9 +13,9 @@ public class DemoController
 {
     
     @RequestMapping("/metrics")
-    public string test()
+    public String test()
     {
-        string ret = "# HELP test metric" 
+        String ret = "# HELP test metric" 
             + "\n# TYPE test gauge"
             + "\ntest 10.0";
         
