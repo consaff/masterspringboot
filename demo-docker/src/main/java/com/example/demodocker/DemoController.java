@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController
 {
     
-    @RequestMapping("/metrics")
+    @RequestMapping("/fakemetrics")
     public String test()
     {
         String ret = 
