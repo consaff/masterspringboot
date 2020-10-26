@@ -18,7 +18,7 @@ public class DemoController
         String ret = 
             "# HELP jvm_buffer_memory_used_bytes An estimate of the memory that the Java virtual machine is using for this buffer pool\n"
             + "# TYPE jvm_buffer_memory_used_bytes gauge\n"
-            + "jvm_buffer_memory_used_bytes{id=\"direct\",} 81920.0\n"
+            + "jvm_buffer_memory_used_bytes{id=\"direct\"} 81920.0\n"
             + "# EOF\n";
         
         return ret;       
