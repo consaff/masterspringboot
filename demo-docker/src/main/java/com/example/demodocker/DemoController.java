@@ -20,7 +20,7 @@ public class DemoController
             "\njvm_memory_used_bytes{area=\"heap\",id=\"PS Old Gen\",} 1.1718296E7\njvm_memory_used_bytes{area=\"heap\",id=\"PS Eden Space\",} 1.07929016E8" +
             "\njvm_memory_used_bytes{area=\"nonheap\",id=\"Metaspace\",} 3.9945752E7 \njvm_memory_used_bytes{area=\"nonheap\",id=\"Code Cache\",} 1.074304E7"
             + "\njvm_memory_used_bytes{area=\"nonheap\",id=\"Compressed Class Space\",} 4938248.0\n"
-            + "# EOF\n;
+            + "# EOF\n";
         
         return ret;       
     }
