@@ -23,9 +23,9 @@ public class DemoController
         String jvm_memory_max_bytes =
             "# HELP jvm_memory_max_bytes The maximum amount of memory in bytes that can be used for memory management\n"
             + "# TYPE jvm_memory_max_bytes gauge\n"
-            + "jvm_memory_max_bytes{area=\"heap\", id=\"PS Survivor Space\"} 2097152.0\n"
-            + "jvm_memory_max_bytes{area=\"heap\", id=\"PS Old Gen\"} 5.54067E9\n"
-            + "jvm_memory_max_bytes{area=\"heap\", id=\"PS EdenSpace\"} 2.2734E9\n";
+            + "jvm_memory_max_bytes{area=\"heap\",id=\"PS Survivor Space\"} 2097152.0\n"
+            + "jvm_memory_max_bytes{area=\"heap\",id=\"PS Old Gen\"} 5.54067E9\n"
+            + "jvm_memory_max_bytes{area=\"heap\",id=\"PS EdenSpace\"} 2.2734E9\n";
         
         return jvm_buffer_memory_used_bytes + jvm_memory_max_bytes + "# EOF\n";       
     }
