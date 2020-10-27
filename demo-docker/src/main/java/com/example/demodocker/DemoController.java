@@ -15,17 +15,7 @@ public class DemoController
     @RequestMapping("/fakemetrics")
     public String test()
     {
-        
-        /*
-        jvm_buffer_memory_used_bytes
-        jvm_memory_max_bytes
-        http_server_request_seconds_max
-        http_server_requests_seconds
-        process_uptime_seconds
-        jvm_gc_memory_promoted_bytes_total
-        jvm_gc_memory_allocated_bytes_total
-        jvm_gc_max_data_size_bytes
-        */
+       
         
         String jvm_buffer_memory_used_bytes = 
             "# HELP jvm_buffer_memory_used_bytes An estimate of the memory that the Java virtual machine is using for this buffer pool\n"
