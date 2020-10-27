@@ -47,8 +47,8 @@ public class DemoController
         String http_server_requests_seconds =
             "# HELP http_server_requests_seconds summary of HTTP server requests\n"
             + "# TYPE http_server_requests_seconds summary\n"
-            + "http_server_requests_seconds_count{exception=\"None\",method=\"GET\",outcome=\"CLIENT_ERROR\",status\"404\"} 1345\n"
-            + "http_server_requests_seconds_max{exception=\"None\",method=\"GET\",outcome=\"CLIENT_ERROR\",status\"404\"} 9384\n";
+            + "http_server_requests_seconds_count{exception=\"None\",method=\"GET\",outcome=\"CLIENT_ERROR\",status=\"500\"} 1345\n"
+            + "http_server_requests_seconds_max{exception=\"None\",method=\"GET\",outcome=\"CLIENT_ERROR\",status=\"500\"} 9384\n";
        
         String process_uptime_seconds =
             "# HELP process_uptime_seconds The uptime of the JVM\n"
