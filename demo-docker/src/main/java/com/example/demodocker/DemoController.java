@@ -53,12 +53,12 @@ public class DemoController
         String jvm_gc_memory_allocated_bytes_total =
             "# HELP jvm_gc_memory_allocated_bytes_total shows the size of the total GC\n"
             + "# TYPE jvm_gc_memory_allocated_bytes_total counter\n"
-            + "jvm_gc_memory_allocated_bytes_total 4.5981234E10\n";
+            + "jvm_gc_memory_allocated_bytes_total 8459603\n";
         
         String jvm_gc_max_data_size_bytes =
             "# HELP jvm_gc_max_data_size_bytes Max size of old generation pool\n"
             + "# TYPE jvm_gc_max_data_size_bytes gauge\n"
-            + "jvm_gc_max_data_size_bytes 5.542945E9\n";
+            + "jvm_gc_max_data_size_bytes 8940569\n";
             
         
         return jvm_buffer_memory_used_bytes + jvm_memory_max_bytes + http_server_requests_seconds_max + 
