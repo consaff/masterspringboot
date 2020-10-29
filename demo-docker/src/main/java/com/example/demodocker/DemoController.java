@@ -15,7 +15,6 @@ public class DemoController
     @RequestMapping("/fakemetrics")
     public String test()
     {
-       
         
         String jvm_buffer_memory_used_bytes = 
             "# HELP jvm_buffer_memory_used_bytes An estimate of the memory that the Java virtual machine is using for this buffer pool\n"
@@ -25,9 +24,9 @@ public class DemoController
         String jvm_memory_max_bytes =
             "# HELP jvm_memory_max_bytes The maximum amount of memory in bytes that can be used for memory management\n"
             + "# TYPE jvm_memory_max_bytes gauge\n"
-            + "jvm_memory_max_bytes{area=\"heap\",id=\"PS Survivor Space\"} 2097152.0\n"
-            + "jvm_memory_max_bytes{area=\"heap\",id=\"PS Old Gen\"} 5.54067E9\n"
-            + "jvm_memory_max_bytes{area=\"heap\",id=\"PS EdenSpace\"} 2.2734E9\n";
+            + "jvm_memory_max_bytes{area=\"heap\",id=\"PS Survivor Space\"} 41504.2\n"
+            + "jvm_memory_max_bytes{area=\"heap\",id=\"PS Old Gen\"} 12310.5\n"
+            + "jvm_memory_max_bytes{area=\"heap\",id=\"PS EdenSpace\"} 37854.4\n";
         
         String http_server_requests_seconds_max =
             "# HELP http_server_requests_seconds_max time to complete an HTTP server request\n"
@@ -37,13 +36,15 @@ public class DemoController
         String http_server_requests_seconds =
             "# HELP http_server_requests_seconds summary of HTTP server requests\n"
             + "# TYPE http_server_requests_seconds summary\n"
-            + "http_server_requests_seconds_count{exception=\"None\",method=\"GET\",outcome=\"CLIENT_ERROR\",status=\"500\"} 1345\n"
-            + "http_server_requests_seconds_max{exception=\"None\",method=\"GET\",outcome=\"CLIENT_ERROR\",status=\"500\"} 9384\n";
+            + "http_server_requests_seconds_sum{exception=\"None\",method=\"GET\",status=\"200\"} 54\n"
+            + "http_server_requests_seconds_count{exception=\"None\",method=\"GET\",status=\"200\"} 4\n"
+            + "http_server_requests_seconds_count{exception=\"None\",method=\"GET\",outcome=\"CLIENT_ERROR\",status=\"501\"} 2\n"
+            + "http_server_requests_seconds_max{exception=\"None\",method=\"GET\",outcome=\"CLIENT_ERROR\",status=\"501\"} 5\n";
        
         String process_uptime_seconds =
             "# HELP process_uptime_seconds The uptime of the JVM\n"
             + "# TYPE process_uptime_seconds gauge\n"
-            + "process_uptime_seconds 23456.3456\n";
+            + "process_uptime_seconds 24\n";
         
         String jvm_gc_memory_promoted_bytes_total = 
             "# HELP jvm_gc_memory_promoted_bytes_total memory used in the JVM GC\n"
@@ -76,13 +77,4 @@ public class DemoController
         return customerList;
     }
     
-    /*
-    public Object GetPrometheusMetrics()
-    {
-        System.out.println("metrics has been called!");
-        Object response = prometheusRegistry.scrape();
-        System.out.println("RESPONSE: " + response);
-        return response;
-    }
-    */
 }
