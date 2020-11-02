@@ -12,6 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController
 {
     
+    @RequestMapping("/sleep")
+    public String sleep() throws InterruptedException 
+    {
+        Thread.sleep(4000);
+        return "sleep is complete!\n";
+    }
+    
     @RequestMapping("/fakemetrics")
     public String test()
     {
