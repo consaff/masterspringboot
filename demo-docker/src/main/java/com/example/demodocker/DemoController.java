@@ -38,7 +38,7 @@ public class DemoController
         String http_server_requests_seconds_max =
             "# HELP http_server_requests_seconds_max time to complete an HTTP server request\n"
             + "# TYPE http_server_requests_seconds_max gauge\n"
-            + "http_server_requests_seconds_max{exception=\"None\",method=\"GET\",outcome=\"SUCCESS\",status=\"200\"} 4.0\n";
+            + "http_server_requests_seconds_max{exception=\"None\",outcome=\"SUCCESS\"} 11.0\n";
         
         String http_server_requests_seconds =
             "# HELP http_server_requests_seconds summary of HTTP server requests\n"
