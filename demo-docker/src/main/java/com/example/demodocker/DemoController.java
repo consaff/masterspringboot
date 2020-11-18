@@ -23,6 +23,16 @@ public class DemoController
     public String test()
     {
         
+        //metrics for alert: SpringBootDemoJvmGc
+        String jvm_gc_pause_seconds =
+            "# HELP jvm_gc_pause_seconds time spent in GC pause\n"
+            + "# TYPE jvm_gc_pause_seconds summary\n"
+            + "jvm_gc_pause_seconds_count{cause=\"Metadata GC Threshold\"} 2.0\n"
+            + "jvm_gc_pause_seconds_sum{cause=\"Metadata GC Threshold\"} .489\n"
+            + "jvm_gc_pause_seconds_count{cause=\"Allocation Failure\"} 4.0\n"
+            + "jvm_gc_pause_seconds_sum{cause=\"Allocation Failure\"} .932\n";
+        
+        //metrics for alert: SpringBootDemoJvmMemory
         String jvm_buffer_memory_used_bytes = 
             "# HELP jvm_buffer_memory_used_bytes An estimate of the memory that the Java virtual machine is using for this buffer pool\n"
             + "# TYPE jvm_buffer_memory_used_bytes gauge\n"
@@ -33,13 +43,22 @@ public class DemoController
             + "# TYPE jvm_memory_max_bytes gauge\n"
             + "jvm_memory_max_bytes{area=\"heap\",id=\"PS Survivor Space\"} 41504.2\n"
             + "jvm_memory_max_bytes{area=\"heap\",id=\"PS Old Gen\"} 12310.5\n"
-            + "jvm_memory_max_bytes{area=\"heap\",id=\"PS EdenSpace\"} 37854.4\n";
+            + "jvm_memory_max_bytes{area=\"heap\",id=\"PS EdenSpace\"} 37854.4\n"
+            + "jvm_memory_max_bytes{area=\"nonheap\"} 994399.1\n";
         
+        //metrics for alert: SpringBootDemoProcessRestarts
+        String process_uptime_seconds =
+            "# HELP process_uptime_seconds The uptime of the JVM\n"
+            + "# TYPE process_uptime_seconds gauge\n"
+            + "process_uptime_seconds 44\n";
+        
+        //metrics for alert: SpringBootDemoProcessTime
         String http_server_requests_seconds_max =
             "# HELP http_server_requests_seconds_max time to complete an HTTP server request\n"
             + "# TYPE http_server_requests_seconds_max gauge\n"
             + "http_server_requests_seconds_max{exception=\"None\",outcome=\"SUCCESS\"} 11.0\n";
         
+        //metrics for alert: SpringBootDemoRequestErrors
         String http_server_requests_seconds =
             "# HELP http_server_requests_seconds summary of HTTP server requests\n"
             + "# TYPE http_server_requests_seconds summary\n"
@@ -48,30 +67,10 @@ public class DemoController
             + "http_server_requests_seconds_count{exception=\"None\",method=\"GET\",outcome=\"CLIENT_ERROR\",status=\"501\"} 2\n"
             + "http_server_requests_seconds_max{exception=\"None\",method=\"GET\",outcome=\"CLIENT_ERROR\",status=\"501\"} 5\n";
        
-        String process_uptime_seconds =
-            "# HELP process_uptime_seconds The uptime of the JVM\n"
-            + "# TYPE process_uptime_seconds gauge\n"
-            + "process_uptime_seconds 24\n";
-        
-        String jvm_gc_memory_promoted_bytes_total = 
-            "# HELP jvm_gc_memory_promoted_bytes_total memory used in the JVM GC\n"
-            + "# TYPE jvm_gc_memory_promoted_bytes_total counter\n"
-            + "jvm_gc_memory_promoted_bytes_total 654659.4\n";
-        
-        String jvm_gc_memory_allocated_bytes_total =
-            "# HELP jvm_gc_memory_allocated_bytes_total shows the size of the total GC\n"
-            + "# TYPE jvm_gc_memory_allocated_bytes_total counter\n"
-            + "jvm_gc_memory_allocated_bytes_total 8459603\n";
-        
-        String jvm_gc_max_data_size_bytes =
-            "# HELP jvm_gc_max_data_size_bytes Max size of old generation pool\n"
-            + "# TYPE jvm_gc_max_data_size_bytes gauge\n"
-            + "jvm_gc_max_data_size_bytes 8940569\n";
             
         
-        return jvm_buffer_memory_used_bytes + jvm_memory_max_bytes + http_server_requests_seconds_max + 
-            process_uptime_seconds + jvm_gc_memory_promoted_bytes_total + jvm_gc_memory_allocated_bytes_total + 
-            http_server_requests_seconds + jvm_gc_max_data_size_bytes + "# EOF\n";       
+        return jvm_gc_pause_seconds + jvm_buffer_memory_used_bytes + jvm_memory_max_bytes + process_uptime_seconds
+            + http_server_requests_seconds_max + http_server_requests_seconds + "# EOF\n";       
     }
     
     //PrometheusMeterRegistry prometheusRegistry = new PrometheusMeterRegistry(PrometheusConfig.DEFAULT);
