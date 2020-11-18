@@ -36,7 +36,7 @@ public class DemoController
         String jvm_memory_used_bytes = 
             "# HELP jvm_memory_used_bytes An estimate of the memory that the Java virtual machine is using for this pool\n"
             + "# TYPE jvm_memory_used_bytes gauge\n"
-            + "jvm_memory_used_bytes{area=\"heap\", id=\"PS Survivor Space\"} 81920.0\n";
+            + "jvm_memory_used_bytes{area=\"heap\",id=\"PS Survivor Space\"} 81920.0\n";
         
         String jvm_memory_max_bytes =
             "# HELP jvm_memory_max_bytes The maximum amount of memory in bytes that can be used for memory management\n"
