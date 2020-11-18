@@ -33,10 +33,10 @@ public class DemoController
             + "jvm_gc_pause_seconds_sum{cause=\"Allocation Failure\"} .932\n";
         
         //metrics for alert: SpringBootDemoJvmMemory
-        String jvm_buffer_memory_used_bytes = 
-            "# HELP jvm_buffer_memory_used_bytes An estimate of the memory that the Java virtual machine is using for this buffer pool\n"
-            + "# TYPE jvm_buffer_memory_used_bytes gauge\n"
-            + "jvm_buffer_memory_used_bytes{id=\"direct\"} 81920.0\n";
+        String jvm_memory_used_bytes = 
+            "# HELP jvm_memory_used_bytes An estimate of the memory that the Java virtual machine is using for this pool\n"
+            + "# TYPE jvm_memory_used_bytes gauge\n"
+            + "jvm_memory_used_bytes{id=\"direct\"} 81920.0\n";
         
         String jvm_memory_max_bytes =
             "# HELP jvm_memory_max_bytes The maximum amount of memory in bytes that can be used for memory management\n"
@@ -69,7 +69,7 @@ public class DemoController
        
             
         
-        return jvm_gc_pause_seconds + jvm_buffer_memory_used_bytes + jvm_memory_max_bytes + process_uptime_seconds
+        return jvm_gc_pause_seconds + jvm_memory_used_bytes + jvm_memory_max_bytes + process_uptime_seconds
             + http_server_requests_seconds_max + http_server_requests_seconds + "# EOF\n";       
     }
     
